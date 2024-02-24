@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	mode: 'development', // Set the mode to development or production
@@ -17,6 +18,13 @@ module.exports = {
 			}
 		],
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: "Youkai",
+			filename: "index.html",
+			template: "src/template.html"
+		})
+	],
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
